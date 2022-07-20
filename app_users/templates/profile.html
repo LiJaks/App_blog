@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о профиле</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% if profile.photo_profile.url is not error%}
+        <img src="{{ profile.photo_profile.url }}">
+    {% endif %}
+    <p>
+       <font size="4" color="Black" face="TimesNewRoman">
+            <strong>Username</strong>: {{ user.username }}<br>
+       </font>
+    </p>
+    <p>
+       <font size="4" color="Black" face="TimesNewRoman">
+            <strong>First name</strong>: {{ user.first_name }}<br>
+       </font>
+    </p>
+    <p>
+       <font size="4" color="Black" face="TimesNewRoman">
+            <strong>Last name</strong>: {{ user.last_name }}<br>
+       </font>
+    </p>
+    <p>
+       <font size="4" color="Black" face="TimesNewRoman">
+            <strong>Email</strong>: {{ user.email }}<br>
+       </font>
+    </p>
+    <p>
+       <font size="4" color="Black" face="TimesNewRoman">
+            <strong>City</strong>: {{ profile.city }}<br>
+       </font>
+    </p>
+    <p>
+        <font size="4" color="Black" face="TimesNewRoman">
+                <a href="/profile/edit/{{ user.id }}">Редактировать профиль</a>
+        </font>
+    </p>
+    <h2><a href="{% url 'main_url' %}">На главную</a></h2>
+</body>
+</html>

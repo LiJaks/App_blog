@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Записи блога</title>
+</head>
+<body>
+    {% if record_list %}
+        <ol>
+            {% for record in record_list %}
+            <li>
+                <p>Автор: {{ record.user }}</p>
+                <p>Описание: {{ record.description|truncatechars:100 }}</p>
+                <a href="/blog/record/{{ record.id }}">Подробнее</a>
+            </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>На данный момент записи в блоге отсутствуют.</p>
+    {% endif %}
+</body>
+</html>

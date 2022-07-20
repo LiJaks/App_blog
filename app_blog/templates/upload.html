@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Загрузка новых записей</title>
+</head>
+<body>
+  <h2>Здесь вы можете загрузить несколько записей блога одним файлом!</h2>
+  <p>Возможно загрузка только csv файла. В файле должны быть два столбца (1-й запись блога, 2-й дата создания).</p>
+  <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ upload.as_p }}
+        <button type="submit">Загрузить</button>
+  </form>
+</body>
+</html>
